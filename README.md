@@ -3,9 +3,13 @@ This repository contains some different ways of methods personal uesd to realize
 # Guide
 folder and its content
 CNN - Convolutional neural network
+
 DCNN - Double channel convolutional neural network
+
 DAE - Denoise autoencoder
+
 SDAE - Stacked denoise autoencoder
+
 # About data
 I have to give my apologize for not offering the whole version of HRRP data that is needed for the project, for the data I am using is actually not allowed to open publicly.
 
