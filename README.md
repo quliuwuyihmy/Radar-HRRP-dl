@@ -17,7 +17,7 @@ I have to give my apologize for not offering the whole version of HRRP data that
 the limited dataset offerred is HRRP data of three air-plane （no more detail , apologize)
 
 
-Train_hrrp.mat —— train data, created by Matlab, the format is [row = sample, col = data], data = [onehot labels(x3) , HRRP data(x256)] 
+Train_hrrp.mat —— struct:{name=aa} train data, created by Matlab, will be loaded as a structure by python, the data format is [row = sample, col = data], data = [onehot labels(x3) , HRRP data(x256)] 
 
 
-Test_hrrp.mat —— test data, created by Matlab, the format is [row = sample, col = data], data = [onehot labels(x3) , HRRP data(x256)] 
+Test_hrrp.mat —— struct:{name=bb} test data, created by Matlab, will be loaded as a structure by python,the data format is [row = sample, col = data], data = [onehot labels(x3) , HRRP data(x256)] 
