@@ -21,3 +21,10 @@ Train_hrrp.mat —— struct:{name=aa} train data, created by Matlab, will be lo
 
 
 Test_hrrp.mat —— struct:{name=bb} test data, created by Matlab, will be loaded as a structure by python,the data format is [row = sample, col = data], data = [onehot labels(x3) , HRRP data(x256)] 
+
+# Contact me
+Contact me if you have new idea on my code or simply you need my help.
+
+My name is Alex 
+
+My mail :854587355@qq.com
