@@ -8,6 +8,11 @@ DAE - Denoise autoencoder
 SDAE - Stacked denoise autoencoder
 # About data
 I have to give my apologize for not offering the whole version of HRRP data that is needed for the project, for the data I am using is actually not allowed to open publicly.
+
 the limited dataset offerred is HRRP data of three air-plane （no more detail , apologize)
+
+
 Train_hrrp.mat —— train data, created by Matlab, the format is [row = sample, col = data], data = [onehot labels(x3) , HRRP data(x256)] 
+
+
 Test_hrrp.mat —— test data, created by Matlab, the format is [row = sample, col = data], data = [onehot labels(x3) , HRRP data(x256)] 
