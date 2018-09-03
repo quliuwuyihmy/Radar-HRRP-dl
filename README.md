@@ -12,7 +12,7 @@ DAE - Denoise autoencoder
 SDAE - Stacked denoise autoencoder
 
 # About data
-I have to give my apologize for not offering the whole version of HRRP data that is needed for the project, for the data I am using is actually not allowed to open publicly.
+I have to give my apologize for not offering the whole version of HRRP data that is needed for the project, for the data I am using is actually not allowed to share publicly.
 
 the limited dataset offerred is HRRP data of three air-plane （no more detail , apologize)
 
