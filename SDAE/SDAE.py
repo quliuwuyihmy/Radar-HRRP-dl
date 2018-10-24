@@ -1,4 +1,4 @@
-
+# 注： SDAE在大样本条件下才能体现出其优势
 #coding: utf-8
 from __future__ import division, print_function, absolute_import
 import scipy.io as scio
