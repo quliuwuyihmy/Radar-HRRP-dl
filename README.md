@@ -14,7 +14,7 @@ SDAE - Stacked denoise autoencoder
 # About data
 I have to give my apologize for not offering the whole version of HRRP data that is needed for the project, for the data I am using is actually not allowed to share publicly.
 
-the limited dataset offerred is HRRP data of three air-plane （no more detail , apologize)
+the limited dataset offerred is HRRP data of three air-plane 
 
 
 Train_hrrp.mat —— struct:{name=aa} train data, created by Matlab, will be loaded as a structure by python, the data format is [row = sample, col = data], data = [onehot labels(x3) , HRRP data(x256)] 
