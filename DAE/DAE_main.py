@@ -4,30 +4,30 @@ from __future__ import division, print_function, absolute_import
 import scipy.io as scio
 import numpy as np
 import tensorflow as tf
-from dae import AdditiveGaussianNoiseAutoencoder
+from DAE_def import AdditiveGaussianNoiseAutoencoder
 
 
 #定义训练参数
 input_size = 256
 label_size = 3
 training_epochs = 50
-training_iters = 68000
-ae_batch_size = 1000
-train_batch_size = 100
-display_step = 10
-stack_size = 1  #栈中包含5个ae
+training_iters = 200
+ae_batch_size = 50
+train_batch_size = 10
+display_step = 1
+stack_size = 1  
 hidden_size = [3]
 learning_rate = 0.05 #预测网络的学习率
-ae_learning_rate = 0.003   #只有1层隐藏层时，学习率为0.0025左右效果最佳
-test_batch_size = 5000
-testing_iters = 10000
+ae_learning_rate = 0.003   
+test_batch_size = 200
+testing_iters = 200
 # 导入HRRP数据
-file_name = './train_dataset.mat'    
+file_name = './Train_hrrp.mat'    
 traindata_base =scio.loadmat(file_name)['aa']
 train_hrrp = traindata_base[:,3:]
 train_labels = traindata_base[:,0:3]
 
-file_name2 = './test_dataset.mat'    
+file_name2 = './Test_hrrp.mat'    
 testdata_base =scio.loadmat(file_name2)['bb']
 test_hrrp = testdata_base[0:10000,3:]
 test_labels = testdata_base[0:10000,0:3]
