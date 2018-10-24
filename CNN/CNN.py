@@ -11,8 +11,8 @@ learning_rate = 0.005
 training_iters = 200 
 test_batch_size = 200
 testing_iters = 200
-batch_size = 10
-display_step = 1
+batch_size = 5
+display_step = 2
 # 定义网络参数
 n_input = 256 # 输入的维度
 n_classes = 3 # 标签的维度
