@@ -8,11 +8,11 @@ from tensorflow.python.platform import gfile
 
 # 定义网络超参数
 learning_rate = 0.005  #学习率
-training_iters = 68000 #训练集样本数量
-test_batch_size = 1000 #测试集每批的batch大小（测试时，每批都输出一次精度）
-testing_iters = 10000 #测试集样本数量
-batch_size = 500  #训练集每批的batch大小
-display_step = 2  #训练时 每多少批数据输出一次精度accuracy
+training_iters = 200 #训练集样本数量
+test_batch_size = 200 #测试集每批的batch大小（测试时，每批都输出一次精度）
+testing_iters = 200 #测试集样本数量
+batch_size = 10  #训练集每批的batch大小
+display_step = 1  #训练时 每多少批数据输出一次精度accuracy
 # 定义网络参数
 n_input = 256 # 输入的维度
 n_input_1 = 128 # 通道1的输入维数，对应大方差
@@ -25,16 +25,16 @@ epoch_num = 2 #生成batch时的迭代次数
 
 
 # 导入HRRP数据
-file_name = './train_pca256.mat'   
+file_name = './Train_hrrp.mat'   
 # file_name = 'D:/HRRP data/data/2channel/pca256.mat'   
-traindata_base =scio.loadmat(file_name)['a']
+traindata_base =scio.loadmat(file_name)['aa']
 # print(data_base.shape)
 hrrp = traindata_base[:,3:]
 # print(hrrp)
 labels = traindata_base[:,0:3]
 # print(label)
-file_name2 = './test_pca256.mat'
-testdata_base = scio.loadmat(file_name2)['b']
+file_name2 = './Test_hrrp.mat'
+testdata_base = scio.loadmat(file_name2)['bb']
 test_hrrp = testdata_base[:,3:]
 test_labels =testdata_base[:,0:3]
 
