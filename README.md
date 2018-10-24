@@ -25,6 +25,6 @@ Test_hrrp.mat —— struct:{name=bb} test data, created by Matlab, will be load
 # Contact me
 Contact me if you have new idea on my code or simply you need my help.
 
-My name is Alex 
+My name is Alex （or Zikun Xu)
 
-My mail :854587355@qq.com
+My mail :zikun19961215@foxmail.com    QQ:854587355
