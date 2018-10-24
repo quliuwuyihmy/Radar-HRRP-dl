@@ -11,25 +11,25 @@ from DAE_def import AdditiveGaussianNoiseAutoencoder
 input_size = 256
 label_size = 3
 training_epochs = 50
-training_iters = 1000
-ae_batch_size = 500
-train_batch_size = 50
+training_iters = 200
+ae_batch_size = 50
+train_batch_size = 5
 display_step = 2
 stack_size = 5  #栈中包含5个ae
 hidden_size = [256,128,64,16,3]
 learning_rate = 0.0085 #预测网络的学习率
-ae_learning_rate = 0.00285  #只有1层隐藏层时，学习率为0.0025左右效果最佳
-test_batch_size = 2000
-testing_iters = 2000
-noise_scale = 4
+ae_learning_rate = 0.00285  
+test_batch_size = 200
+testing_iters = 200
+noise_scale = 0 #高斯噪声程度(噪声会影响识别率，改参数可测试算法的鲁棒性)
 # 导入HRRP数据
-file_name = './unbalan_traindata.mat'    
-traindata_base =scio.loadmat(file_name)['a']
+file_name = './Train_hrrp.mat'    
+traindata_base =scio.loadmat(file_name)['aa']
 train_hrrp = traindata_base[:training_iters,3:]
 train_labels = traindata_base[:training_iters,0:3]
 
-file_name2 = './unbalan_testdata.mat'    
-testdata_base =scio.loadmat(file_name2)['b']
+file_name2 = './Test_hrrp.mat'    
+testdata_base =scio.loadmat(file_name2)['bb']
 test_hrrp = testdata_base[0:testing_iters,3:]
 test_labels = testdata_base[0:testing_iters,0:3]
 
