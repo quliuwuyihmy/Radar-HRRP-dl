@@ -7,12 +7,12 @@ from tensorflow.python.platform import gfile
 
 
 # 定义网络超参数
-learning_rate = 0.005
+learning_rate = 0.0005
 training_iters = 200 
 test_batch_size = 200
 testing_iters = 200
-batch_size = 5
-display_step = 2
+batch_size = 2
+display_step = 5
 # 定义网络参数
 n_input = 256 # 输入的维度
 n_classes = 3 # 标签的维度
