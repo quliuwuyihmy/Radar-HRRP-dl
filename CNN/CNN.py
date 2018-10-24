@@ -8,29 +8,29 @@ from tensorflow.python.platform import gfile
 
 # 定义网络超参数
 learning_rate = 0.005
-training_iters = 80 
-test_batch_size = 5000
-testing_iters = 5000
+training_iters = 200 
+test_batch_size = 200
+testing_iters = 200
 batch_size = 10
 display_step = 1
 # 定义网络参数
-n_input = 700 # 输入的维度
+n_input = 256 # 输入的维度
 n_classes = 3 # 标签的维度
-dropout = 0.7 # Dropout 的概率
+dropout = 0.8 # Dropout 的概率
 epoch_num = 2 #生成batch时的迭代次数
 
-log_dir = 'D:/HRRP data/simple_cnn_log'#可视化数据保存地址
+log_dir = './simple_cnn_log'#可视化数据保存地址
 
 # 导入HRRP数据
-file_name = 'D:/HRRP data/data/new_ship/training_data.mat'
-traindata_base =scio.loadmat(file_name)['p']
+file_name = './Train_hrrp.mat'
+traindata_base =scio.loadmat(file_name)['aa']
 # print(data_base.shape)
 hrrp = traindata_base[:,3:]
 # print(hrrp)
 labels = traindata_base[:,0:3]
 # print(label)
-file_name2 = 'D:/HRRP data/data/new_ship/test_data.mat'
-testdata_base = scio.loadmat(file_name2)['q']
+file_name2 = './Test_hrrp.mat'
+testdata_base = scio.loadmat(file_name2)['bb']
 test_hrrp = testdata_base[:,3:3+n_input]
 test_labels =testdata_base[:,0:3]
 
@@ -90,7 +90,7 @@ def alex_net(_X, _weights, _biases, _dropout):
     with tf.name_scope('layer2'):
         conv2 = conv2d('conv2', norm1, _weights['wc2'], _biases['bc2'])
         # 下采样
-        pool2 = max_pool('pool2', conv2, k=5)
+        pool2 = max_pool('pool2', conv2, k=2)
         # 归一化
         norm2 = norm('norm2', pool2, lsize=4)
         # Dropout
@@ -124,7 +124,7 @@ with tf.name_scope('Weights'):
         'wc1': tf.Variable(tf.random_normal([1, 36, 1, 64])),
         'wc2': tf.Variable(tf.random_normal([1, 36, 64, 128])),
         'wc3': tf.Variable(tf.random_normal([1, 36, 128, 256])),
-        'wd1': tf.Variable(tf.random_normal([1*35*256, 1024])),
+        'wd1': tf.Variable(tf.random_normal([1*32*256, 1024])),
         'wd2': tf.Variable(tf.random_normal([1024, 1024])),
         'out': tf.Variable(tf.random_normal([1024, n_classes]))
     }
@@ -212,18 +212,3 @@ with tf.Session() as sess:
 
 
  
-# with tf.Session(graph=tf.Graph()) as sess:
-
-#     sess.run(tf.global_variables_initializer())
- 
-#     # convert_variables_to_constants 需要指定output_node_names，list()，可以多个
-#     constant_graph = graph_util.convert_variables_to_constants(sess, sess.graph_def, ['model_out'])
- 
-#     # 测试 OP
-#     # test_xs, test_ys = sess.run([hrrp_test, label_test])
-#     # feed_dict = {x: 10, y: 3}
-#     # print ("Testing Accuracy:", sess.run(accuracy, feed_dict={x: test_xs, y: test_ys, keep_prob: 1.}))
- 
-#     # 写入序列化的 PB 文件
-#     with tf.gfile.FastGFile(pb_file_path+'model.pb', mode='wb') as f:
-#         f.write(constant_graph.SerializeToString())
